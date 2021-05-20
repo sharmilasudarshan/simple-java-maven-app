@@ -15,6 +15,7 @@ pipeline{
       steps{
         sh 'mvn test'
       }
+    }
       stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('SonarQube') {
@@ -22,7 +23,5 @@ pipeline{
             }
         }
     }
-      
-  }
   }
 }
